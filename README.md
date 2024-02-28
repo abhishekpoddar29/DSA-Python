@@ -1,2 +1,2 @@
 # DSA-Python
-dsa in python
+Data Structures in Python. Solution of all the Data structures problem statement.

@@ -11,6 +11,7 @@ Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-
 Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 '''
 def max_profit(prices):
+    '''
     min_price=float('inf')
     max_profit=0
     for i in prices:
@@ -19,6 +20,17 @@ def max_profit(prices):
         elif i-min_price>max_profit:
             max_profit=i-min_price
     return max_profit
+    '''
+    l,r=0,1
+    profit=0
+    while r!=len(prices):
+        if prices[l]<prices[r]:
+            cur_profit=prices[r]-prices[l]
+            profit=max(profit,cur_profit)
+        else:
+            l=r
+        r+=1
+    return profit
 
 prices_input = input("Enter numbers for prices separated by spaces: ")
 prices = list(map(int, prices_input.split()))
